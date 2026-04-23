@@ -1,0 +1,128 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "headphones",
+      "description": "Premium noise-cancelling wireless headphones",
+      "price": 199.99,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "name": "Smart Watch",
+      "description": "Fitness tracking smart watch",
+      "price": 149.99,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800",
+      "inStock": true,
+      "rating": 4.2
+    },
+    {
+      "id": "3",
+      "name": "Bluetooth Speaker",
+      "description": "Portable high-quality speaker",
+      "price": 89.99,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    },
+    {
+      "id": "4",
+      "name": "Laptop Stand",
+      "description": "Ergonomic aluminum laptop stand",
+      "price": 49.99,
+      "category": "Accessories",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    },
+    {
+      "id": "5",
+      "name": "Wireless Mouse",
+      "description": "Rechargeable wireless mouse",
+      "price": 29.99,
+      "category": "Accessories",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    },
+    {
+      "id": "6",
+      "name": "Mechanical Keyboard",
+      "description": "RGB mechanical keyboard",
+      "price": 99.99,
+      "category": "Accessories",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    },
+    {
+      "id": "7",
+      "name": "Gaming Chair",
+      "description": "Ergonomic gaming chair",
+      "price": 249.99,
+      "category": "Furniture",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    },
+    {
+      "id": "8",
+      "name": "USB-C Hub",
+      "description": "Multiport USB-C hub",
+      "price": 59.99,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    },
+    {
+      "id": "e81b",
+      "name": "Gaming Laptop",
+      "description": "High-performance gaming laptop with RTX graphics\n",
+      "price": 1200,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800",
+      "inStock": true,
+      "rating": 4,
+      "properties": [
+        {
+          "color": "Black",
+          "weight": "2.5kg"
+        },
+        {
+          "color": "Silver",
+          "weight": "2.3kg"
+        }
+      ]
+    },
+    {
+      "id": "9735",
+      "name": "Gaming Laptop Pro",
+      "description": "High performance gaming laptop with RTX graphics and fast SSD storage",
+      "price": 1200,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800",
+      "inStock": true,
+      "rating": 4.5,
+      "properties": [
+        {
+          "color": "silver",
+          "weight": "2.3kg"
+        }
+      ]
+    },
+    {
+      "id": "8da9",
+      "name": "Gaming Headset Pro",
+      "description": "High performance gaming headset with surround sound and noise cancelling microphone\n",
+      "price": 150,
+      "category": "Electronics",
+      "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800",
+      "inStock": true,
+      "rating": 0,
+      "properties": [
+        {
+          "color": "black",
+          "weight": "1kg"
+        },
+        {
+          "color": "silver ",
+          "weight": "2kg"
+        }
+      ]
+    }
+  ]
+}

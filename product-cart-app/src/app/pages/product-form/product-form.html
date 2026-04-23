@@ -1,0 +1,111 @@
+<h2>Add Product</h2>
+
+<!-- Loading -->
+<div *ngIf="loading$ | async" class="state loading">
+  <div class="spinner"></div>
+  Saving product...
+</div>
+
+<!-- Error -->
+<div *ngIf="error$ | async as error" class="state error">
+  {{ error }}
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <!-- Name -->
+  <label>
+    Name
+    <input formControlName="name" />
+    <small *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+      Name must be at least 3 characters
+    </small>
+  </label>
+
+  <!-- Description -->
+  <label>
+    Description
+    <textarea formControlName="description"></textarea>
+    <small *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+      Description must be at least 10 characters
+    </small>
+  </label>
+
+  <!-- Price -->
+  <label>
+    Price
+    <input type="number" formControlName="price" />
+    <small *ngIf="form.get('price')?.touched && form.get('price')?.invalid">
+      Price must be at least 50
+    </small>
+  </label>
+
+  <!-- Category -->
+  <label>
+    Category
+    <select formControlName="categoryId">
+      <option value="">Select Category</option>
+  
+      <option *ngFor="let category of categories" [ngValue]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+  
+    <small *ngIf="form.get('categoryId')?.touched && form.get('categoryId')?.invalid">
+      Category is required
+    </small>
+  </label>
+
+  <!-- Image URL -->
+  <label>
+    Image URL
+    <input formControlName="imageUrl" />
+    <small *ngIf="form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid">
+      Must be a valid URL (http or https)
+    </small>
+  </label>
+
+  <!-- In Stock -->
+  <label class="checkbox">
+    <input type="checkbox" formControlName="inStock" />
+    In Stock
+  </label>
+
+  <!-- Rating -->
+  <label>
+    Rating (0–5)
+    <input type="number" formControlName="rating" min="0" max="5" />
+    <small *ngIf="form.get('rating')?.touched && form.get('rating')?.invalid">
+      Rating must be between 0 and 5
+    </small>
+  </label>
+
+  <!-- Properties FormArray -->
+  <div formArrayName="properties">
+
+    <h3>Properties</h3>
+
+    <div *ngFor="let property of properties.controls; let i = index"
+         [formGroupName]="i"
+         class="property-row">
+
+      <input placeholder="Color" formControlName="color" />
+      <input placeholder="Weight" formControlName="weight" />
+
+      <button type="button" (click)="removeProperty(i)">
+        Remove
+      </button>
+
+    </div>
+
+    <button type="button" (click)="addProperty()">
+      Add Property
+    </button>
+
+  </div>
+
+  <button type="submit" [disabled]="form.invalid || (loading$ | async)">
+    Create Product
+  </button>
+
+</form>

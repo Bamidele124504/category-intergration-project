@@ -1,0 +1,17 @@
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    background: #fff;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .selected {
+    background-color: #e0f7fa;
+  }
+  

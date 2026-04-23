@@ -1,0 +1,30 @@
+<!-- Loading -->
+<div *ngIf="loading$ | async" class="state loading">
+  Loading products...
+</div>
+
+<!-- Error -->
+<div *ngIf="errorMessage" class="state error">
+  {{ errorMessage }}
+</div>
+
+<!-- Products -->
+<div class="products-container" *ngIf="!(loading$ | async) && !errorMessage">
+
+  <div class="card"
+       *ngFor="let product of products$ | async"
+       (click)="viewProduct(product)">
+
+    <img [src]="product.imageUrl" />
+
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>₦{{ product.price }}</p>
+
+    <button (click)="addToCart(product, $event)">
+      Add to Cart
+    </button>
+
+  </div>
+
+</div>

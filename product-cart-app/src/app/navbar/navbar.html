@@ -1,0 +1,35 @@
+<nav class="navbar">
+
+  <!-- Always visible -->
+  <a routerLink="/">Store</a>
+
+  <!-- Only show when logged in -->
+  <ng-container *ngIf="isAuthenticated$ | async">
+
+    <a routerLink="/cart">
+      Cart ({{ (cart$ | async)?.length }})
+    </a>
+
+    <a routerLink="/products/new">Add Product</a>
+
+  </ng-container>
+
+  <!-- Auth Section -->
+  <ng-container *ngIf="isAuthenticated$ | async; else showLogin">
+
+    <span class="user">
+      {{ auth.getCurrentUser() }}
+    </span>
+
+    <button (click)="logout()">
+      Logout
+    </button>
+
+  </ng-container>
+
+  <!-- Show Login if NOT authenticated -->
+  <ng-template #showLogin>
+    <a routerLink="/login">Login</a>
+  </ng-template>
+
+</nav>
