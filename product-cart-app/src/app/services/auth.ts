@@ -21,7 +21,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  // (calls backend)
+  // LOGIN
   login(credentials: { email: string; password: string }) {
     return this.http.post<any>(`${this.baseUrl}/login`, credentials).pipe(
       tap((res) => {
@@ -30,7 +30,7 @@ export class AuthService {
         // Save JWT token
         localStorage.setItem('token', res.access_token);
 
-        // save user email
+        // Save user email
         localStorage.setItem('userEmail', credentials.email);
 
         // Update auth state
@@ -39,7 +39,18 @@ export class AuthService {
     );
   }
 
-  // Logout
+  // SIGNUP (NEW)
+  signup(data: {
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+  }) {
+    return this.http.post<any>(`${this.baseUrl}/signup`, data);
+  }
+
+  // LOGOUT
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('userEmail');
@@ -56,7 +67,7 @@ export class AuthService {
     return localStorage.getItem('userEmail');
   }
 
-  // Get token 
+  // Get token
   getToken(): string | null {
     return localStorage.getItem('token');
   }

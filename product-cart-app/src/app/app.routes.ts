@@ -9,6 +9,12 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/login/login').then(m => m.LoginComponent)
   },
+  
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./pages/signup/signup').then(m => m.SignupComponent)
+  },  
 
   // Protected routes
   {
