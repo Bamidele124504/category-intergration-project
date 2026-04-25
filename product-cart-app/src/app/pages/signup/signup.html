@@ -1,13 +1,27 @@
-<h2>Sign Up</h2>
+<div class="auth-container">
 
-<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="auth-card">
+    <h2>Sign Up</h2>
 
-  <input placeholder="First Name" formControlName="firstName" />
-  <input placeholder="Last Name" formControlName="lastName" />
-  <input placeholder="Phone Number" formControlName="phoneNumber" />
-  <input placeholder="Email" formControlName="email" />
-  <input type="password" placeholder="Password" formControlName="password" />
+    <form [formGroup]="form" (ngSubmit)="submit()">
 
-  <button type="submit">Sign Up</button>
+      <input placeholder="First Name" formControlName="firstName" />
+      <input placeholder="Last Name" formControlName="lastName" />
+      <input placeholder="Phone Number" formControlName="phoneNumber" />
+      <input placeholder="Email" formControlName="email" />
+      <input type="password" placeholder="Password" formControlName="password" />
 
-</form>
+      <button type="submit" [disabled]="form.invalid">
+        Sign Up
+      </button>
+
+    </form>
+
+    <p class="auth-link">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+
+  </div>
+
+</div>
